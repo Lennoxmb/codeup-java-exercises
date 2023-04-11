@@ -9,11 +9,5 @@ public class StringExercise {
         String backslash = "I can do backslashes \\, double backslashes \\\\,\nand the amazing triple backslash \\\\\\!";
         System.out.println(backslash);
 
-
-
-
-
-
-
     }
 }
