@@ -3,9 +3,7 @@ import java.util.Scanner;
 
 public class diceroller {
     public static void main(String[] args) {
-
             Scanner sc = new Scanner(System.in);
-
             boolean rollAgain = true;
             while (rollAgain) {
                 System.out.println("How many dice would you like to roll?");
