@@ -1,9 +1,10 @@
-import rpg.fighter;
-
 public class person {
     public static void main(String[] args) {
         person person1 = new person("Mirin");
-        person1.printName();
+        person person2 = person1;
+        System.out.println(person1 == person2);
+        person person3 = new person("Alrae");
+        person3.printName();
     }
     private String name;
 
@@ -15,7 +16,6 @@ public class person {
         return name;
     }
 
-    public person(){}
     public person(String name) {
         this.name = name;
     }

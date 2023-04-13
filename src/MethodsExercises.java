@@ -31,17 +31,15 @@ public class MethodsExercises {
     }
 
     public static int getInteger(int min, int max) {
-        System.out.print("Enter a number between " + min + " and " + max);
+        System.out.print("Enter a number between " + min + " and " + max + ": ");
         Scanner input = new Scanner(System.in);
-        int number = input.nextInt();
-        if (number < min || number > max) {
-            System.out.print("You're dumb. Between " + min + " and" + max);
-            return number;
+        int userNum = input.nextInt();
+        if (userNum >= min && userNum <= max) {
+            return userNum;
         }
-        System.out.println(number);
-        getInteger(min, max);
-        return number;
+        return getInteger(min, max);
     }
+
 
     public static int factorial(int num) {
         int userInput = getInteger(1, 10);

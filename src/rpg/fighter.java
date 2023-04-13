@@ -35,7 +35,7 @@ public class fighter {
         }
         // code > generate > getter and setter
         public void printStats(){
-            System.out.printf("%s, has %d HP, and does %d max damage. Armor class is %d%n", name, hitPoints, maxDamage, armorClass);
+            System.out.printf("%s has %d HP, and does %d max damage. Armor class is %d%n", name, hitPoints, maxDamage, armorClass);
         }
 
         public fighter() {

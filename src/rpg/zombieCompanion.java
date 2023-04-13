@@ -1,7 +1,10 @@
 package rpg;
 
 public class zombieCompanion {
+    public static int totalCompanions;
+
     private String name;
+    private String owner;
     private String size;
     private int hitPoints;
     private int maxDamage;
@@ -13,6 +16,14 @@ public class zombieCompanion {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 
     public String getSize() {
@@ -48,16 +59,20 @@ public class zombieCompanion {
     }
 
     public void printStats(){
-        System.out.printf("%s, is a %s creature, has %d HP, and does %d max damage.%n", name, size, hitPoints, maxDamage);
+        System.out.printf("%s is a %s creature that belongs to %s, has %d HP, and does %d max damage.%n", name, size, owner, hitPoints, maxDamage);
     }
     public void sounds(){
         System.out.printf("When %s attacks, it makes a loud \"%s\" sound.%n", name, noise);
     }
 
-    public zombieCompanion(){}
-    public zombieCompanion(String name, String size, int hitPoints, int maxDamage, String noise) {
+    public zombieCompanion(){
+        totalCompanions++;
+    }
+    public zombieCompanion(String name, String size, String owner, int hitPoints, int maxDamage, String noise) {
+        totalCompanions++;
         this.name = name;
         this.size = size;
+        this.owner = owner;
         this.hitPoints = hitPoints;
         this.maxDamage = maxDamage;
         this.noise = noise;
