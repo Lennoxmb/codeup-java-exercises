@@ -8,7 +8,6 @@ public class Input {
 
     public Input(){
         this.scanner = new Scanner(System.in);
-
     }
 
     public String getString(){
@@ -21,10 +20,17 @@ public class Input {
         return scanner.nextLine();
     }
 
-    public boolean yesNo() {
-        System.out.println("Would you like to continue? [y/N]");
-        String input = scanner.nextLine().toLowerCase();
-        return input.equals("y") || input.equals("yes");
+    public boolean yesNo(){
+        System.out.println("Do you want to continue?[y/n]");
+        String userChoice = scanner.nextLine();
+        return userChoice.equalsIgnoreCase("y") || userChoice.equalsIgnoreCase("yes");
+    }
+
+    // use this yesNo method in combination
+    // with getString(). Pass the return from a getString()
+    // to this method
+    public boolean yesNo(String input){
+        return input.trim().equalsIgnoreCase("y") || input.trim().equalsIgnoreCase("yes");
     }
 
     public int getInt(int min, int max) {
@@ -37,21 +43,26 @@ public class Input {
     }
 
     public int getInt(){
-        System.out.println("enter a number"); //can do "prompt" too
+        System.out.println("Enter an integer:");
+        return scanner.nextInt();
+    }
+
+    public int getInt(String prompt){
+        System.out.println(prompt);
         return scanner.nextInt();
     }
 
     public double getDouble(double min, double max){
-        System.out.printf("enter a number between %.1f and %.1f", min, max);
-        double userInput = scanner.nextDouble();
+        System.out.printf("Enter a number between %.1f and %.1f:", min, max);
         double userNum = scanner.nextDouble();
-        if (userNum >= min && userNum <= max){
+        if (userNum >= min && userNum <= max) {
             return userNum;
         }
         return getDouble(min, max);
     }
+
     public double getDouble(){
-        System.out.println("enter a number decimals");
+        System.out.println("Enter a number (decimals allowed):");
         return scanner.nextDouble();
     }
 
@@ -65,7 +76,4 @@ public class Input {
         String ghost = scanner.nextLine();
     }
 
-
 }
-
-
