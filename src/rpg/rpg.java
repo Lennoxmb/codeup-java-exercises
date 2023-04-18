@@ -2,6 +2,7 @@ package rpg;
 
 import rpg.animals.quote;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class rpg {
@@ -70,6 +71,8 @@ public class rpg {
 //        for (Monster dndMob : monsters){
 //            System.out.printf("%s has %d HP%n", dndMob.getName(), dndMob.getHitPoints());
 //        }
+        //COLLECTIONS
+        ArrayList<Monster> monsterList = new ArrayList<>();
 
 
 
