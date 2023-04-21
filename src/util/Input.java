@@ -35,35 +35,62 @@ public class Input {
 
     public int getInt(int min, int max) {
         System.out.print("Enter a number between " + min + " and " + max + ": ");
-        int userNum = scanner.nextInt();
+        String userInput = getString();
+        try {
+            Integer.valueOf(userInput);
+        } catch (NumberFormatException e) {
+            System.out.println("Not valid");
+            return getInt(min, max);
+        }
+        int userNum = Integer.parseInt(userInput);
         if (userNum >= min && userNum <= max) {
             return userNum;
+        } else {
+            System.out.println("You did not enter a correct number");
+            return getInt(min, max);
         }
-        return getInt(min, max);
     }
 
-    public int getInt(){
+    public int getInt() {
         System.out.println("Enter an integer:");
-        return scanner.nextInt();
-    }
+        String userInput = getString();
+        try {
+            Integer.valueOf(userInput);
+        } catch (NumberFormatException e) {
+            System.out.println("That's not a number");
+            return getInt();
 
-    public int getInt(String prompt){
-        System.out.println(prompt);
-        return scanner.nextInt();
+        } return Integer.parseInt(userInput);
     }
 
     public double getDouble(double min, double max){
         System.out.printf("Enter a number between %.1f and %.1f:", min, max);
-        double userNum = scanner.nextDouble();
+        String userInput = getString();
+        try {
+            Double.valueOf(userInput);
+        } catch (NumberFormatException e) {
+            System.out.println("Not valid");
+            return getDouble(min, max);
+        }
+        Double userNum = Double.parseDouble(userInput);
         if (userNum >= min && userNum <= max) {
             return userNum;
+        } else {
+            System.out.println("That wasn't in the correct numbers");
+
+            return getDouble(min, max);
         }
-        return getDouble(min, max);
     }
 
     public double getDouble(){
         System.out.println("Enter a number (decimals allowed):");
-        return scanner.nextDouble();
+        String userInput = getString();
+        try {
+            Double.valueOf(userInput);
+        } catch (NumberFormatException e) {
+            System.out.println("Not valid");
+            return getDouble();
+        } return getDouble();
     }
 
     public double getDouble(String prompt){
@@ -77,3 +104,9 @@ public class Input {
     }
 
 }
+
+//Your getInt and getDouble methods should make sure that the value returned from the method is actually an int or a double. You can do this by replacing the use of the Scanner nextInt() and nextDouble() methods with the existing getString() method you created in a previous exercise using the following methods to convert the returned String into the desired datatype:
+//
+//
+//Integer.valueOf(String s);
+//Double.valueOf(String s);

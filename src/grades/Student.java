@@ -38,5 +38,7 @@ public class Student {
 
 
     }
-//    public void addGrades(ArrayList)
+    public void addGrades(ArrayList<Integer> grades){
+        this.grades.addAll(grades);
+    }
 }
