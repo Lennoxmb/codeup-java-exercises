@@ -1,7 +1,7 @@
 //package shapes;
 //import util.*;
 //
-//public class circleApp {
+//public class CircleApp {
 //    public static void main(String[] args) {
 //        double radius = new Input().getDouble("please enter radius of circle");
 //        Circle circle = new Circle(radius);
